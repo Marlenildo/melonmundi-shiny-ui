@@ -89,6 +89,42 @@ shinyApp(ui, server)
 3. Migrar classes locais genéricas para helpers `mm_*`.
 4. Manter no `www/estilo.css` do app apenas o que for específico daquele produto.
 
+## Sincronização do tema
+
+Sem mexer no `melonmundi-auth`, o fluxo recomendado é manter os apps
+autocontidos e sincronizar apenas o arquivo de tema compartilhado.
+
+O script [`scripts/sync-theme.sh`](scripts/sync-theme.sh) copia:
+
+- origem: `inst/assets/melonmundi-theme.css`
+- destino: `www/melonmundi-theme.css` em cada app
+
+Uso:
+
+```bash
+./scripts/sync-theme.sh check all
+./scripts/sync-theme.sh sync agrofito
+./scripts/sync-theme.sh sync all
+```
+
+Apps suportados hoje:
+
+- `agrofito`
+- `agrofruta`
+- `agrosolo`
+
+Se o guarda-chuva local estiver em outro caminho, use `MELONMUNDI_ROOT`:
+
+```bash
+MELONMUNDI_ROOT=/caminho/para/melonmundi ./scripts/sync-theme.sh sync agrofito
+```
+
+O script altera apenas `www/melonmundi-theme.css`. Cada app continua dono de:
+
+- `www/estilo.css`
+- logos e imagens
+- textos e componentes específicos do produto
+
 ## Deploy na VPS
 
 O fluxo atual de produção da MelonMundi sincroniza apenas o repositório do app
