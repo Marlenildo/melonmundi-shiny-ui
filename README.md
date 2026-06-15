@@ -42,6 +42,18 @@ O pacote foi desenhado para que cada app mantenha localmente apenas:
 - `mm_status_line()`
 - `mm_footer()`
 
+## Primitivos de layout compartilhados
+
+Além dos helpers R, o tema compartilhado já concentra classes reutilizáveis para
+estrutura e responsividade:
+
+- `mm-field-stack`: pilha vertical uniforme entre grupos de campos
+- `mm-field-grid`: grade de campos em duas colunas que empilha no mobile
+- `mm-field-grid-compact`: linha com campo principal e campo lateral compacto
+- `mm-field-grid-wide-side`: linha com campo principal e campo lateral mais largo
+- `mm-matrix-grid`: grade matricial simétrica para entradas tabulares
+- `mm-workspace-grid`: ajuste consistente entre colunas principais da página
+
 ## Convenções
 
 - Classes compartilhadas usam prefixo `mm-`

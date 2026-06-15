@@ -39,6 +39,8 @@ Use esse fluxo quando houver mudanças em:
 - cores compartilhadas
 - botões compartilhados
 - campos compartilhados
+- grades responsivas de formulários
+- matrizes de entrada simétricas
 - grids, cards e alertas reutilizáveis
 - responsividade comum
 

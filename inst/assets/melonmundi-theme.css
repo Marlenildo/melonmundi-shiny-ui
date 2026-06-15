@@ -258,6 +258,117 @@ body {
   margin: 14px 0 10px;
 }
 
+.mm-field-stack {
+  display: grid;
+  gap: 14px;
+}
+
+.mm-field-grid,
+.mm-field-grid-compact,
+.mm-field-grid-wide-side {
+  display: grid;
+  gap: 14px;
+  align-items: start;
+}
+
+.mm-field-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.mm-field-grid-compact {
+  grid-template-columns: minmax(0, 1fr) minmax(150px, auto);
+}
+
+.mm-field-grid-wide-side {
+  grid-template-columns: minmax(0, 1fr) minmax(180px, auto);
+}
+
+.mm-field-grid > *,
+.mm-field-grid-compact > *,
+.mm-field-grid-wide-side > * {
+  min-width: 0;
+}
+
+.mm-field-grid > .shiny-input-container,
+.mm-field-grid > .form-group,
+.mm-field-grid-compact > .shiny-input-container,
+.mm-field-grid-compact > .form-group,
+.mm-field-grid-wide-side > .shiny-input-container,
+.mm-field-grid-wide-side > .form-group {
+  width: 100% !important;
+  margin-bottom: 0;
+}
+
+.mm-matrix-grid {
+  --mm-matrix-gap: 8px;
+  --mm-matrix-template: minmax(76px, 1.15fr) repeat(4, minmax(0, 1fr));
+  --mm-matrix-cell-height: 54px;
+  display: grid;
+  grid-template-columns: var(--mm-matrix-template);
+  grid-auto-rows: var(--mm-matrix-cell-height);
+  gap: var(--mm-matrix-gap);
+  align-items: stretch;
+  width: 100%;
+  min-width: 0;
+}
+
+.mm-matrix-corner,
+.mm-matrix-head,
+.mm-matrix-label,
+.mm-matrix-cell {
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.mm-matrix-head,
+.mm-matrix-label {
+  padding: 8px 10px;
+  border-radius: 14px;
+  background: var(--forest-100);
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.15;
+  overflow-wrap: normal;
+  word-break: normal;
+  display: flex;
+  align-items: center;
+}
+
+.mm-matrix-head {
+  justify-content: center;
+  text-align: center;
+}
+
+.mm-matrix-label {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.mm-matrix-cell {
+  display: flex;
+  align-items: stretch;
+}
+
+.mm-matrix-cell > .shiny-input-container,
+.mm-matrix-cell > .form-group {
+  width: 100% !important;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  align-items: stretch;
+}
+
+.mm-matrix-cell .form-control {
+  width: 100%;
+  min-height: 0;
+  height: 100%;
+  padding: 8px 6px;
+  text-align: center;
+}
+
 .mm-summary-inline {
   display: flex;
   flex-wrap: wrap;
@@ -372,7 +483,7 @@ body {
 .form-group label,
 .control-label {
   margin-bottom: 7px;
-  color: var(--forest-950);
+  color: var(--primary);
   font-size: 13px;
   font-weight: 800;
   display: block;
@@ -875,6 +986,10 @@ table.dataTable tr:hover {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.mm-workspace-grid > [class*="col-"]:first-child {
+  margin-bottom: 0;
+}
+
 .mm-info-card {
   padding: 22px;
   border-radius: 20px;
@@ -1104,6 +1219,16 @@ table.dataTable tr:hover {
   box-shadow: none;
 }
 
+@media (max-width: 1279px) {
+  .mm-workspace-grid > [class*="col-"] {
+    width: 100%;
+  }
+
+  .mm-workspace-grid > [class*="col-"]:first-child {
+    margin-bottom: 18px;
+  }
+}
+
 @media (max-width: 1180px) {
   .mm-card-grid-3,
   .mm-card-grid-2 {
@@ -1164,6 +1289,26 @@ table.dataTable tr:hover {
     font-size: 14px;
   }
 
+  .mm-field-stack,
+  .mm-field-grid,
+  .mm-field-grid-compact,
+  .mm-field-grid-wide-side {
+    gap: 12px;
+  }
+
+  .mm-field-grid-compact {
+    grid-template-columns: minmax(0, 1fr) minmax(136px, auto);
+  }
+
+  .mm-field-grid-wide-side {
+    grid-template-columns: minmax(0, 1fr) minmax(170px, auto);
+  }
+
+  .mm-matrix-grid {
+    --mm-matrix-gap: 6px;
+    --mm-matrix-cell-height: 52px;
+  }
+
 }
 
 @media (max-width: 768px) {
@@ -1208,6 +1353,28 @@ table.dataTable tr:hover {
   .mm-alert-warning,
   .mm-surface-card {
     padding: 18px;
+  }
+
+  .mm-field-grid,
+  .mm-field-grid-compact,
+  .mm-field-grid-wide-side {
+    grid-template-columns: 1fr;
+  }
+
+  .mm-matrix-grid {
+    --mm-matrix-gap: 4px;
+    --mm-matrix-cell-height: 50px;
+  }
+
+  .mm-matrix-head,
+  .mm-matrix-label {
+    padding: 6px 6px;
+    font-size: 10px;
+  }
+
+  .mm-matrix-cell .form-control {
+    font-size: 13px;
+    padding: 6px 4px;
   }
 
   .login-box {
