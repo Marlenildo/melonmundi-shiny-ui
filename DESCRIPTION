@@ -1,0 +1,22 @@
+Package: melonmundiShinyUI
+Title: Shared Theme and UI Helpers for MelonMundi Shiny Apps
+Version: 0.1.0
+Authors@R: person(given = "MelonMundi", family = "Team", email = "contato@melonmundi.com", role = c("aut", "cre"))
+Author: MelonMundi Team [aut, cre]
+Maintainer: MelonMundi Team <contato@melonmundi.com>
+Description: Centralizes the shared MelonMundi visual theme and reusable UI
+    helper functions for internal Shiny applications. The package provides a
+    stable CSS dependency plus composable helpers for cards, alerts, footer,
+    inline actions, status lines, loading states and other recurring app
+    surfaces.
+License: file LICENSE
+Encoding: UTF-8
+LazyData: false
+Imports:
+    htmltools,
+    shiny
+Suggests:
+    knitr,
+    rmarkdown
+Roxygen: list(markdown = TRUE)
+NeedsCompilation: no
