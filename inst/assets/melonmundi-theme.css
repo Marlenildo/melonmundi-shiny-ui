@@ -1338,7 +1338,7 @@ table.dataTable tr:hover {
   align-items: center;
   justify-content: space-between;
   gap: 18px;
-  padding: 20px 24px 0;
+  padding: 20px 24px max(28px, env(safe-area-inset-bottom));
 }
 
 .mm-footer-logos {
