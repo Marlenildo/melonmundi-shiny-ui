@@ -12,6 +12,20 @@ deploy da VPS e sem mexer no `melonmundi-auth`.
 - somente `www/melonmundi-theme.css` é sincronizado a partir desta fonte
 - `www/estilo.css` continua específico de cada app
 
+## Apps sincronizados
+
+O script suporta e valida os apps:
+
+- `agrofito`
+- `agrofruta`
+- `agrosolo`
+
+No estado atual, os três devem retornar `[ok]` em:
+
+```bash
+./scripts/sync-theme.sh check all
+```
+
 ## Comandos
 
 Conferir se os apps estão atualizados:
@@ -53,6 +67,10 @@ Cada app continua responsável por:
 - textos operacionais
 - exceções visuais específicas do domínio
 - CSS específico em `www/estilo.css`
+
+Exemplos: grades de entrada do AgroSolo, pares de campos de parcela do
+AgroFruta e cartões de resultado do AgroFito permanecem nos apps até que um
+padrão idêntico se repita em mais produtos.
 
 ## Publicação
 

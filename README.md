@@ -137,6 +137,17 @@ O script altera apenas `www/melonmundi-theme.css`. Cada app continua dono de:
 - logos e imagens
 - textos e componentes específicos do produto
 
+## Estado atual dos apps
+
+Os apps abaixo estão sincronizados com `inst/assets/melonmundi-theme.css`:
+
+- `app-agrofito`
+- `app-agrofruta`
+- `app-agrosolo`
+
+Use `./scripts/sync-theme.sh check all` antes de publicar mudanças no tema para
+confirmar que todos continuam usando a mesma base compartilhada.
+
 ## Deploy na VPS
 
 O fluxo atual de produção da MelonMundi sincroniza apenas o repositório do app
@@ -153,6 +164,6 @@ Detalhes e caminhos de adoção estão em [`docs/DEPLOY.md`](docs/DEPLOY.md).
 
 ## Próximos passos recomendados
 
-- adotar o pacote em `app-agrosolo`
-- adotar o pacote em `app-agrofruta`
-- depois mover helpers recorrentes desses apps para este pacote, quando o padrão realmente se repetir
+- manter `inst/assets/melonmundi-theme.css` como fonte de verdade do tema
+- sincronizar os apps sempre que o tema compartilhado mudar
+- mover helpers recorrentes dos apps para este pacote apenas quando o padrão realmente se repetir
