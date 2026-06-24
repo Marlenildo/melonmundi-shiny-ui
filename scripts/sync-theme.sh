@@ -24,6 +24,7 @@ Usage:
 Apps:
   agrofito
   agrofruta
+  agroirriga
   agrosolo
 EOF
 }
@@ -32,6 +33,7 @@ app_repo_dir() {
   case "$1" in
     agrofito) echo "${ECOSYSTEM_ROOT}/app-agrofito" ;;
     agrofruta) echo "${ECOSYSTEM_ROOT}/app-agrofruta" ;;
+    agroirriga) echo "${ECOSYSTEM_ROOT}/app-agroirriga" ;;
     agrosolo) echo "${ECOSYSTEM_ROOT}/app-agrosolo" ;;
     *)
       echo "ERROR: unknown app '$1'" >&2
@@ -52,7 +54,7 @@ ensure_prereqs() {
 }
 
 list_apps() {
-  printf '%s\n' agrofito agrofruta agrosolo
+  printf '%s\n' agrofito agrofruta agroirriga agrosolo
 }
 
 check_one() {

@@ -127,6 +127,7 @@ Apps suportados hoje:
 
 - `agrofito`
 - `agrofruta`
+- `agroirriga`
 - `agrosolo`
 
 Se o guarda-chuva local estiver em outro caminho, use `MELONMUNDI_ROOT`:
@@ -147,6 +148,7 @@ Os apps abaixo estão sincronizados com `inst/assets/melonmundi-theme.css`:
 
 - `app-agrofito`
 - `app-agrofruta`
+- `app-agroirriga`
 - `app-agrosolo`
 
 Use `./scripts/sync-theme.sh check all` antes de publicar mudanças no tema para
