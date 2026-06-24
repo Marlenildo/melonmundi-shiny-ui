@@ -694,6 +694,75 @@ body {
   white-space: nowrap;
 }
 
+.modal-footer {
+  border-top: 1px solid #e1e8dd;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.modal-footer .btn,
+.modal-footer .mm-modal-cancel-btn,
+.modal-footer .mm-modal-primary-btn,
+.modal-footer .mm-modal-danger-btn {
+  align-items: center;
+  border-radius: 14px;
+  box-shadow: none;
+  display: inline-flex;
+  font-weight: 800;
+  gap: 8px;
+  justify-content: center;
+  min-height: 42px;
+  padding: 10px 16px;
+  transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease, transform 0.18s ease;
+}
+
+.modal-footer .mm-modal-cancel-btn,
+.modal-footer .btn-default.mm-modal-cancel-btn {
+  background: #ffffff;
+  border: 1px solid #d7dfd1;
+  color: var(--primary);
+}
+
+.modal-footer .mm-modal-cancel-btn:hover,
+.modal-footer .mm-modal-cancel-btn:focus {
+  background: #eef6e8;
+  border-color: #c9d8bf;
+  color: var(--primary);
+  transform: translateY(-1px);
+}
+
+.modal-footer .mm-modal-primary-btn,
+.modal-footer .btn-default.mm-modal-primary-btn {
+  background: var(--primary);
+  border: 1px solid var(--primary);
+  color: #ffffff;
+}
+
+.modal-footer .mm-modal-primary-btn:hover,
+.modal-footer .mm-modal-primary-btn:focus {
+  background: var(--primary-dark, var(--forest-900, #3d6f31));
+  border-color: var(--primary-dark, var(--forest-900, #3d6f31));
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.modal-footer .mm-modal-danger-btn,
+.modal-footer .btn-danger.mm-modal-danger-btn {
+  background: var(--danger, #b43d36);
+  border: 1px solid var(--danger, #b43d36);
+  color: #ffffff;
+}
+
+.modal-footer .mm-modal-danger-btn:hover,
+.modal-footer .mm-modal-danger-btn:focus {
+  background: var(--danger-dark, #8f2f2a);
+  border-color: var(--danger-dark, #8f2f2a);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
 .mm-segmented-control {
   display: flex;
   width: fit-content;
@@ -1092,6 +1161,29 @@ table.dataTable tr:hover {
   margin: 0;
   color: var(--muted);
   line-height: 1.7;
+}
+
+.mm-formula-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 12px;
+}
+
+.mm-formula-card .mm-formula-badge {
+  display: inline-flex;
+  max-width: 100%;
+  margin: 0;
+  padding: 8px 12px;
+  border: 1px solid rgba(84, 130, 56, 0.16);
+  border-radius: 999px;
+  background: var(--forest-100);
+  color: var(--primary) !important;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.3;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
 .mm-chip {

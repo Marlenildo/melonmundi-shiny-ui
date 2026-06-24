@@ -40,6 +40,8 @@ O pacote foi desenhado para que cada app mantenha localmente apenas:
 - `mm_empty_state()`
 - `mm_loading_hint()`
 - `mm_status_line()`
+- `mm_formula_card()`
+- `mm_before_unload_guard()`
 - `mm_footer()`
 
 ## Primitivos de layout compartilhados
@@ -53,6 +55,8 @@ estrutura e responsividade:
 - `mm-field-grid-wide-side`: linha com campo principal e campo lateral mais largo
 - `mm-matrix-grid`: grade matricial simétrica para entradas tabulares
 - `mm-workspace-grid`: ajuste consistente entre colunas principais da página
+- `mm-formula-card`, `mm-formula-list`, `mm-formula-badge`: cards e badges para fórmulas em abas de ajuda
+- `mm-modal-cancel-btn`, `mm-modal-primary-btn`, `mm-modal-danger-btn`: botões padronizados para rodapés de modais
 
 ## Convenções
 

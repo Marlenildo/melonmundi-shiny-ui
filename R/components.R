@@ -40,6 +40,23 @@ mm_info_card <- function(title, ..., icon_name = NULL, class = NULL) {
   )
 }
 
+mm_formula_card <- function(title, formulas, description, icon_name = NULL, class = NULL) {
+  formulas <- as.character(formulas)
+
+  htmltools::tags$div(
+    class = mm_join_classes("mm-info-card", "mm-formula-card", class),
+    if (!is.null(icon_name)) shiny::icon(icon_name),
+    htmltools::tags$h4(title),
+    htmltools::tags$div(
+      class = "mm-formula-list",
+      lapply(formulas, function(formula) {
+        htmltools::tags$span(class = "mm-formula-badge", formula)
+      })
+    ),
+    htmltools::tags$p(description)
+  )
+}
+
 mm_card_grid <- function(..., columns = 3, class = NULL) {
   if (!(columns %in% c(2, 3))) {
     stop("`columns` must be 2 or 3.", call. = FALSE)
@@ -163,6 +180,39 @@ mm_status_line <- function(text, tone = c("success", "neutral", "warning"), icon
     if (!is.null(icon_name)) shiny::icon(icon_name, class = "mm-status-icon"),
     htmltools::tags$span(text)
   )
+}
+
+mm_before_unload_guard <- function(selectors = c(".action-button", "button", ".selectize-input")) {
+  selector <- shQuote(paste(selectors, collapse = ", "), type = "sh")
+
+  htmltools::tags$script(htmltools::HTML(sprintf("
+    (function() {
+      if (window.MelonMundiBeforeUnloadRegistered) return;
+      window.MelonMundiBeforeUnloadRegistered = true;
+
+      var hasSessionData = false;
+
+      function markSessionData() {
+        hasSessionData = true;
+      }
+
+      document.addEventListener('input', markSessionData, true);
+      document.addEventListener('change', markSessionData, true);
+      document.addEventListener('click', function(event) {
+        if (event.target.closest(%s)) {
+          markSessionData();
+        }
+      }, true);
+
+      window.addEventListener('beforeunload', function(event) {
+        if (!hasSessionData) {
+          return;
+        }
+        event.preventDefault();
+        event.returnValue = '';
+      });
+    })();
+  ", selector)))
 }
 
 mm_footer <- function(app_name, app_version = NULL, product_logo = NULL, company_logo_src = NULL, company_logo_alt = "MelonMundi", company_notice = "\u00a9 2026 MelonMundi - Global Solutions. Todos os direitos reservados.", license_url = NULL, license_label = "Licen\u00e7a propriet\u00e1ria", class = NULL) {

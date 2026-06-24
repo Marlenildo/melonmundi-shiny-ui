@@ -3,6 +3,7 @@
 \alias{mm_page_title}
 \alias{mm_detail_panel}
 \alias{mm_info_card}
+\alias{mm_formula_card}
 \alias{mm_card_grid}
 \alias{mm_chip}
 \alias{mm_inline_action}
@@ -13,6 +14,7 @@
 \alias{mm_empty_state}
 \alias{mm_loading_hint}
 \alias{mm_status_line}
+\alias{mm_before_unload_guard}
 \alias{mm_footer}
 \title{Reusable MelonMundi UI Components}
 \usage{
@@ -23,6 +25,8 @@ mm_page_title(text, class = NULL, tag = c("span", "h1", "h2"))
 mm_detail_panel(..., accent = FALSE, class = NULL)
 
 mm_info_card(title, ..., icon_name = NULL, class = NULL)
+
+mm_formula_card(title, formulas, description, icon_name = NULL, class = NULL)
 
 mm_card_grid(..., columns = 3, class = NULL)
 
@@ -56,6 +60,10 @@ mm_status_line(
   class = NULL
 )
 
+mm_before_unload_guard(
+  selectors = c(".action-button", "button", ".selectize-input")
+)
+
 mm_footer(
   app_name,
   app_version = NULL,
@@ -75,6 +83,8 @@ mm_footer(
   \item{tag}{HTML tag used by \code{mm_page_title()}.}
   \item{accent}{Whether to apply the shared accent treatment to a detail panel.}
   \item{title}{Short heading used by cards, alerts or empty states.}
+  \item{formulas}{Character vector with formulas shown as shared badges.}
+  \item{description}{Text shown below formula badges.}
   \item{icon_name}{Optional Font Awesome icon name passed to \code{shiny::icon()}.}
   \item{columns}{Shared card grid variant. Supported values are \code{2} and \code{3}.}
   \item{label}{Visible label for chips, actions or license links.}
@@ -84,6 +94,7 @@ mm_footer(
   \item{items}{Character vector or list of tags used to build a numbered steps list.}
   \item{detail}{Optional secondary text for loading and empty states.}
   \item{tone}{Shared status tone. Supported values are \code{"success"}, \code{"neutral"} and \code{"warning"}.}
+  \item{selectors}{CSS selectors whose click interactions mark the session as having data before unload.}
   \item{app_name}{App name shown in the shared footer metadata row.}
   \item{app_version}{Optional version text shown in the footer.}
   \item{product_logo}{Optional app-specific logo tag appended beside the company logo.}
