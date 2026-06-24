@@ -1350,7 +1350,7 @@ table.dataTable tr:hover {
 
 .mm-footer-logo {
   display: block;
-  height: 42px;
+  height: 58px;
   width: auto;
   object-fit: contain;
 }
@@ -1498,6 +1498,7 @@ table.dataTable tr:hover {
   }
 
   .mm-footer-logos {
+    flex-wrap: wrap;
     justify-content: center;
     width: 100%;
   }
@@ -1507,6 +1508,11 @@ table.dataTable tr:hover {
     margin-left: 0;
     text-align: center;
     width: 100%;
+  }
+
+  .mm-footer-line {
+    justify-content: center;
+    text-align: center;
   }
 }
 
