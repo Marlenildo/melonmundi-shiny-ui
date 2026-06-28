@@ -57,7 +57,7 @@ estrutura e responsividade:
 - `mm-workspace-grid`: ajuste consistente entre colunas principais da página
 - `mm-rule-table`: tabela estática compacta para regras, faixas e referências técnicas
 - `mm-about-page`: largura e ritmo de leitura padronizados para páginas de ajuda
-- `mm-legal-shell`: largura de documento para páginas de aviso legal
+- `mm-legal-shell`: mesma largura informativa das páginas de ajuda para avisos legais
 - `mm-formula-card`, `mm-formula-list`, `mm-formula-badge`: cards e badges para fórmulas em abas de ajuda
 - `mm-modal-cancel-btn`, `mm-modal-primary-btn`, `mm-modal-danger-btn`: botões padronizados para rodapés de modais
 

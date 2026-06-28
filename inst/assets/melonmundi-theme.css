@@ -21,6 +21,7 @@
   --radius-lg: 20px;
   --radius-md: 14px;
   --page-gutter: 24px;
+  --mm-informative-page-max-width: 1180px;
 }
 
 html,
@@ -1039,7 +1040,7 @@ table.dataTable tr:hover {
 }
 
 .mm-legal-shell {
-  max-width: 860px;
+  max-width: var(--mm-informative-page-max-width);
   margin-right: auto;
   margin-left: auto;
 }
@@ -1082,7 +1083,7 @@ table.dataTable tr:hover {
 
 .mm-about-page {
   padding: 16px 0 8px;
-  max-width: 1180px;
+  max-width: var(--mm-informative-page-max-width);
   margin: 0 auto;
 }
 
