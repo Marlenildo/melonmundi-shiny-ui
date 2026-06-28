@@ -1,6 +1,6 @@
 Package: melonmundiShinyUI
 Title: Shared Theme and UI Helpers for MelonMundi Shiny Apps
-Version: 0.1.0
+Version: 0.2.0
 Authors@R: person(given = "MelonMundi", family = "Team", email = "contato@melonmundi.com", role = c("aut", "cre"))
 Author: MelonMundi Team [aut, cre]
 Maintainer: MelonMundi Team <contato@melonmundi.com>

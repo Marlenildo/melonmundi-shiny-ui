@@ -317,6 +317,12 @@ body {
   gap: 14px;
 }
 
+.mm-field-stack > .shiny-input-container,
+.mm-field-stack > .form-group {
+  width: 100% !important;
+  margin-bottom: 0;
+}
+
 .mm-field-grid,
 .mm-field-grid-compact,
 .mm-field-grid-wide-side {
@@ -562,6 +568,19 @@ body {
   padding: 10px 14px;
 }
 
+.input-group .form-control {
+  border-radius: 14px 0 0 14px;
+}
+
+.input-group-addon {
+  border: 1px solid rgba(36, 65, 37, 0.12);
+  border-left: 0;
+  border-radius: 0 14px 14px 0;
+  background: #f3f7f0;
+  color: var(--primary);
+  font-weight: 800;
+}
+
 .selectize-control.single .selectize-input,
 .selectize-input {
   padding: 11px 14px;
@@ -700,6 +719,16 @@ body {
   flex-wrap: wrap;
   gap: 10px;
   justify-content: flex-end;
+}
+
+.modal-content {
+  border: 0;
+  border-radius: 18px;
+  box-shadow: none;
+}
+
+.modal-body {
+  padding: 26px 24px;
 }
 
 .modal-footer .btn,
@@ -950,6 +979,45 @@ table.dataTable tr:hover {
   background-color: #fff7d6;
 }
 
+.mm-rule-table {
+  width: 100%;
+  min-width: 720px;
+  margin: 0;
+  border: 0;
+  border-collapse: collapse;
+  background: #ffffff;
+}
+
+.mm-rule-table th,
+.mm-rule-table td {
+  vertical-align: middle !important;
+  border-color: rgba(112, 128, 105, 0.26) !important;
+}
+
+.mm-rule-table th {
+  padding: 7px 10px !important;
+  background: rgba(var(--accent-rgb), 0.12) !important;
+  color: var(--forest-950);
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.mm-rule-table td {
+  padding: 6px 9px !important;
+  color: var(--ink);
+  font-size: 13px;
+  line-height: 1.25;
+}
+
+.mm-rule-table tbody tr:nth-child(even) td {
+  background: #fbfdf9;
+}
+
+.mm-rule-table tbody tr:hover td {
+  background: #f5f8f2;
+}
+
 .badge,
 .mm-badge {
   display: inline-block;
@@ -968,6 +1036,12 @@ table.dataTable tr:hover {
   padding: 24px;
   background: #fff3cd;
   color: #6b5b2e;
+}
+
+.mm-legal-shell {
+  max-width: 860px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .mm-alert-warning p {
@@ -1008,7 +1082,8 @@ table.dataTable tr:hover {
 
 .mm-about-page {
   padding: 16px 0 8px;
-  margin: 0;
+  max-width: 1180px;
+  margin: 0 auto;
 }
 
 .mm-brand-showcase {
