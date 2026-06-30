@@ -22,6 +22,7 @@
   --radius-md: 14px;
   --page-gutter: 24px;
   --mm-informative-page-max-width: 1180px;
+  --mm-table-border-color: #d7dde0;
 }
 
 html,
@@ -984,7 +985,7 @@ table.dataTable tr:hover {
   width: 100%;
   min-width: 720px;
   margin: 0;
-  border: 0;
+  border: 1px solid var(--mm-table-border-color);
   border-collapse: collapse;
   background: #ffffff;
 }
@@ -992,7 +993,7 @@ table.dataTable tr:hover {
 .mm-rule-table th,
 .mm-rule-table td {
   vertical-align: middle !important;
-  border-color: rgba(112, 128, 105, 0.26) !important;
+  border: 1px solid var(--mm-table-border-color) !important;
 }
 
 .mm-rule-table th {
