@@ -3,6 +3,7 @@
    Keep only product-specific styling in each app's local www/estilo.css. */
 
 :root {
+  --mm-brand-primary: #548238;
   --primary: #548238;
   --secondary: #ffc000;
   --accent-rgb: 84, 130, 56;
@@ -832,6 +833,113 @@ body {
   background: #ffffff;
   color: var(--primary);
   box-shadow: none;
+}
+
+.mm-toggle-tabs .tab-content {
+  display: none;
+}
+
+.mm-toggle-tabs .nav-tabs {
+  display: flex;
+  width: 100%;
+  margin: 0;
+  padding: 4px;
+  gap: 4px;
+  border: 1px solid rgba(var(--accent-rgb), 0.18);
+  border-radius: 14px;
+  background: rgba(var(--accent-rgb), 0.06);
+}
+
+.mm-toggle-tabs .nav-tabs > li {
+  flex: 1 1 0;
+  margin: 0;
+}
+
+.mm-toggle-tabs .nav-tabs > li > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  margin: 0;
+  padding: 8px 14px;
+  gap: 7px;
+  border: 0 !important;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--muted);
+  font-weight: 800;
+  line-height: 1.2;
+  transition: background-color 0.18s ease, color 0.18s ease;
+}
+
+.mm-toggle-tabs .nav-tabs > li > a:hover,
+.mm-toggle-tabs .nav-tabs > li > a:focus {
+  background: rgba(255, 255, 255, 0.65);
+  color: var(--forest-950);
+}
+
+.mm-toggle-tabs .nav-tabs > li.active > a,
+.mm-toggle-tabs .nav-tabs > li.active > a:hover,
+.mm-toggle-tabs .nav-tabs > li.active > a:focus {
+  background: #ffffff;
+  color: var(--primary);
+  box-shadow: 0 1px 3px rgba(30, 55, 34, 0.12);
+}
+
+.mm-toggle-tabs img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.mm-reactive-update {
+  position: relative;
+  transition: opacity 0.18s ease, filter 0.18s ease;
+}
+
+.mm-reactive-update.recalculating {
+  opacity: 0.58;
+  filter: saturate(0.72);
+  pointer-events: none;
+}
+
+.mm-reactive-update.recalculating::after {
+  content: attr(data-updating-label);
+  position: absolute;
+  z-index: 4;
+  top: 12px;
+  right: 12px;
+  padding: 7px 11px;
+  border: 1px solid rgba(var(--accent-rgb), 0.2);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.96);
+  color: var(--primary);
+  font-size: 12px;
+  font-weight: 800;
+  box-shadow: 0 3px 12px rgba(30, 55, 34, 0.12);
+}
+
+.mm-reactive-update > * {
+  animation: mm-reactive-reveal 0.28s ease-out;
+}
+
+@keyframes mm-reactive-reveal {
+  from {
+    opacity: 0.62;
+    transform: translateY(3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mm-reactive-update,
+  .mm-reactive-update > * {
+    transition: none;
+    animation: none;
+  }
 }
 
 .view-toggle {

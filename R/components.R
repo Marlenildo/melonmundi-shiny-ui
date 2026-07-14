@@ -75,6 +75,38 @@ mm_chip <- function(label, class = NULL) {
   )
 }
 
+mm_toggle_tabs <- function(input_id, choice_names, choice_values, selected = NULL, class = NULL) {
+  if (length(choice_names) != length(choice_values) || length(choice_names) < 2) {
+    stop("`choice_names` and `choice_values` must have the same length of at least 2.", call. = FALSE)
+  }
+
+  choice_values <- as.character(choice_values)
+
+  if (anyDuplicated(choice_values)) {
+    stop("`choice_values` must be unique.", call. = FALSE)
+  }
+
+  if (is.null(selected)) {
+    selected <- choice_values[[1]]
+  }
+
+  if (!selected %in% choice_values) {
+    stop("`selected` must be one of `choice_values`.", call. = FALSE)
+  }
+
+  tabs <- Map(function(label, value) {
+    shiny::tabPanel(title = label, value = value)
+  }, choice_names, choice_values)
+
+  htmltools::tags$div(
+    class = mm_join_classes("mm-toggle-tabs", class),
+    do.call(
+      shiny::tabsetPanel,
+      c(list(id = input_id, type = "tabs", selected = selected), unname(tabs))
+    )
+  )
+}
+
 mm_inline_action <- function(label, href, icon_name = NULL, class = NULL, target = "_blank", rel = "noopener noreferrer") {
   htmltools::tags$a(
     href = href,

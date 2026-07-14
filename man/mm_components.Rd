@@ -14,6 +14,7 @@
 \alias{mm_empty_state}
 \alias{mm_loading_hint}
 \alias{mm_status_line}
+\alias{mm_toggle_tabs}
 \alias{mm_before_unload_guard}
 \alias{mm_footer}
 \title{Reusable MelonMundi UI Components}
@@ -31,6 +32,14 @@ mm_formula_card(title, formulas, description, icon_name = NULL, class = NULL)
 mm_card_grid(..., columns = 3, class = NULL)
 
 mm_chip(label, class = NULL)
+
+mm_toggle_tabs(
+  input_id,
+  choice_names,
+  choice_values,
+  selected = NULL,
+  class = NULL
+)
 
 mm_inline_action(
   label,
@@ -88,6 +97,10 @@ mm_footer(
   \item{icon_name}{Optional Font Awesome icon name passed to \code{shiny::icon()}.}
   \item{columns}{Shared card grid variant. Supported values are \code{2} and \code{3}.}
   \item{label}{Visible label for chips, actions or license links.}
+  \item{input_id}{Shiny input identifier exposed through \code{input[[input_id]]}.}
+  \item{choice_names}{Visible labels or tag objects for the toggle options.}
+  \item{choice_values}{Unique values associated with the toggle options.}
+  \item{selected}{Initially selected value. Defaults to the first choice.}
   \item{href}{Destination URL for inline actions.}
   \item{target}{Anchor target used by inline actions.}
   \item{rel}{Anchor relation used by inline actions.}

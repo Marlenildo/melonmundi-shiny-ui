@@ -2,6 +2,14 @@
 
 Todas as alterações relevantes deste projeto serão documentadas neste arquivo.
 
+## [Não lançado]
+
+### Adicionado
+
+- Adiciona `mm_toggle_tabs()`, controle segmentado reativo baseado em `tabsetPanel` nativo do Shiny para escolhas curtas e mutuamente exclusivas.
+- Adiciona `mm-reactive-update` para sinalizar visualmente a atualização de outputs reativos do Shiny.
+- Adiciona `--mm-brand-primary` como token institucional estável, independente de temas contextuais dos produtos.
+
 ## [0.2.2] - 2026-06-30
 
 ### Alterado
