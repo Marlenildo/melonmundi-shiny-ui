@@ -2,6 +2,14 @@
 
 Todas as alterações relevantes deste projeto serão documentadas neste arquivo.
 
+## [0.2.3] - 2026-07-27
+
+### Alterado
+
+- Restaura as dimensões nativas dos campos do Shiny, preservando as cores, a tipografia e o foco do tema MelonMundi.
+- Alinha cabeçalhos, rótulos e campos das matrizes ao tamanho padrão dos controles.
+- Aplica a paleta MelonMundi aos estados de seleção e interação do calendário.
+
 ## [0.2.2] - 2026-06-30
 
 ### Alterado

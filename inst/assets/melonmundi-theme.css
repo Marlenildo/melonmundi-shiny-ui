@@ -364,7 +364,7 @@ body {
 .mm-matrix-grid {
   --mm-matrix-gap: 8px;
   --mm-matrix-template: minmax(76px, 1.15fr) repeat(4, minmax(0, 1fr));
-  --mm-matrix-cell-height: 54px;
+  --mm-matrix-cell-height: 34px;
   display: grid;
   grid-template-columns: var(--mm-matrix-template);
   grid-auto-rows: var(--mm-matrix-cell-height);
@@ -386,8 +386,8 @@ body {
 
 .mm-matrix-head,
 .mm-matrix-label {
-  padding: 8px 10px;
-  border-radius: 14px;
+  padding: 6px 10px;
+  border-radius: 4px;
   background: var(--forest-100);
   color: var(--primary);
   font-size: 13px;
@@ -555,8 +555,6 @@ body {
 .selectize-input,
 .selectize-control.single .selectize-input,
 .login-box input {
-  min-height: 48px;
-  border-radius: 14px;
   border: 1px solid rgba(36, 65, 37, 0.12);
   background: rgba(255, 255, 255, 0.95);
   box-shadow: none;
@@ -566,28 +564,67 @@ body {
   transition: border-color 0.18s ease, background-color 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
 }
 
-.form-control {
-  padding: 10px 14px;
-}
-
-.input-group .form-control {
-  border-radius: 14px 0 0 14px;
-}
-
 .input-group-addon {
   border: 1px solid rgba(36, 65, 37, 0.12);
   border-left: 0;
-  border-radius: 0 14px 14px 0;
   background: #f3f7f0;
   color: var(--primary);
   font-weight: 800;
 }
 
+.datepicker table tr td.active,
+.datepicker table tr td.active.active,
+.datepicker table tr td.active:hover,
+.datepicker table tr td.active.disabled,
+.datepicker table tr td.active.disabled:hover,
+.datepicker table tr td span.active,
+.datepicker table tr td span.active.active,
+.datepicker table tr td span.active:hover,
+.datepicker table tr td span.active.disabled,
+.datepicker table tr td span.active.disabled:hover {
+  border-color: var(--primary) !important;
+  background-color: var(--primary) !important;
+  background-image: none !important;
+  color: #ffffff !important;
+  text-shadow: none;
+}
+
+.shiny-date-input .form-control::selection {
+  background: rgba(var(--accent-rgb), 0.28);
+  color: var(--ink);
+}
+
+.datepicker table tr td.today,
+.datepicker table tr td.today:hover,
+.datepicker table tr td.today.disabled,
+.datepicker table tr td.today.disabled:hover {
+  border-color: var(--forest-100);
+  background-color: var(--forest-100);
+  background-image: none;
+  color: var(--primary);
+}
+
+.datepicker table tr td.day:hover,
+.datepicker table tr td.focused,
+.datepicker table tr td span:hover,
+.datepicker thead tr:first-child th:hover,
+.datepicker tfoot tr th:hover {
+  background: var(--forest-100);
+  color: var(--primary);
+}
+
 .selectize-control.single .selectize-input,
 .selectize-input {
+  min-height: 48px;
   padding: 11px 14px;
+  border-radius: 14px;
   display: flex;
   align-items: center;
+}
+
+.login-box input {
+  min-height: 48px;
+  border-radius: 14px;
 }
 
 .selectize-input > input {
@@ -1551,7 +1588,7 @@ table.dataTable tr:hover {
 
   .mm-matrix-grid {
     --mm-matrix-gap: 6px;
-    --mm-matrix-cell-height: 52px;
+    --mm-matrix-cell-height: 34px;
   }
 
 }
@@ -1614,7 +1651,7 @@ table.dataTable tr:hover {
 
   .mm-matrix-grid {
     --mm-matrix-gap: 4px;
-    --mm-matrix-cell-height: 50px;
+    --mm-matrix-cell-height: 34px;
   }
 
   .mm-matrix-head,
