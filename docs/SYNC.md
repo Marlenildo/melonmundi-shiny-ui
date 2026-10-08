@@ -18,9 +18,10 @@ O script suporta e valida os apps:
 
 - `agrofito`
 - `agrofruta`
+- `agroirriga`
 - `agrosolo`
 
-No estado atual, os três devem retornar `[ok]` em:
+No estado atual, os quatro devem retornar `[ok]` em:
 
 ```bash
 ./scripts/sync-theme.sh check all

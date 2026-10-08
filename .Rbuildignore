@@ -4,3 +4,5 @@
 ^\.gitignore$
 ^docs$
 ^scripts$
+^AGENTS\.md$
+^CLAUDE\.md$
