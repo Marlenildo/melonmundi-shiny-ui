@@ -233,6 +233,15 @@ body {
   margin-bottom: 18px;
 }
 
+/* O backdrop-filter faz cada cartao pintar o proprio conteudo numa camada,
+   na ordem da pagina: um menu aberto (selectize, dropdown do Bootstrap) que
+   passa da borda ficaria atras do cartao seguinte, qualquer que fosse o
+   z-index do menu. Com o foco dentro (o menu aberto tem foco), o cartao sobe. */
+.mm-surface-card:focus-within {
+  position: relative;
+  z-index: 3;
+}
+
 .mm-surface-card p {
   color: var(--muted);
   font-size: 14px;
