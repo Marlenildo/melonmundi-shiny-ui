@@ -21,6 +21,9 @@
 
 ## Estado atual
 
-- Versão: ver `DESCRIPTION` e `CHANGELOG.md` (0.2.3).
+- Versão: ver `DESCRIPTION` e `CHANGELOG.md` (0.2.4, branch
+  `fix/menus-sobre-cartoes`, 2026-11-10: menus abertos sobem acima do cartão
+  seguinte com `.mm-surface-card:focus-within`). Sincronizada no AgroFito
+  (1.8.1); AgroFruta, AgroIrriga e AgroSolo ainda na 0.2.3.
 - Último trabalho: padronização dos campos Shiny e das bordas das tabelas técnicas.
 - Próximos passos: (preencher)

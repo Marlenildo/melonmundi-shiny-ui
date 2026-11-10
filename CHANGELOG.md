@@ -2,6 +2,12 @@
 
 Todas as alterações relevantes deste projeto serão documentadas neste arquivo.
 
+## [0.2.4] - 2026-11-10
+
+### Corrigido
+
+- Menus abertos dentro de um `mm-surface-card` (selectize e dropdown do Bootstrap) ficam por cima do cartão seguinte. Antes, o `backdrop-filter` do cartão prendia o menu na camada dele, e as opções que passavam da borda ficavam escondidas atrás do próximo cartão (no AgroFito, os filtros atrás dos resultados).
+
 ## [0.2.3] - 2026-07-27
 
 ### Alterado
